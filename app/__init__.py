@@ -9,16 +9,12 @@ from flask_mail import Mail
    
 #.............
 photos = UploadSet('photos',IMAGES)
-def create_app(config_name):
-#....................
-
-
-    login_manager = LoginManager()
-    login_manager.session_protection = 'strong'
-    login_manager.login_view = 'auth.login'
-    bootstrap = Bootstrap()
-    db = SQLAlchemy()
-    mail = Mail()
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
+login_manager.login_view = 'auth.login'
+bootstrap = Bootstrap()
+db = SQLAlchemy()
+mail = Mail()
 def create_app(config_name):
     app = Flask(__name__)
     #........
