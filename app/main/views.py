@@ -67,11 +67,11 @@ def index():
 #     searched_movies = search_movie(movie_name_format)
 #     title = f'search results for {movie_name}'
 #     return render_template('search.html',movies = searched_movies)
-# @main.route('/movie/review/new/<int:id>', methods = ['GET','POST'])
-# @login_required
-# def new_review(id):
-#     form = ReviewForm()
-#     movie = get_movie(id)
+@main.route('/movie/review/new/<int:id>', methods = ['GET','POST'])
+@login_required
+def new_review(id):
+    form = ReviewForm()
+    movie = get_movie(id)
 
     if form.validate_on_submit():
         title = form.title.data
