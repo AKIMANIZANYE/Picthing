@@ -1,4 +1,4 @@
-  from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm
 from wtforms import StringField,TextAreaField,SubmitField, SelectField, RadioField
 from wtforms.validators import Required
 
@@ -8,11 +8,11 @@ class CommentsForm(FlaskForm):
     submit = SubmitField('SUBMIT')  
 
 class UpdateProfile(FlaskForm):
-    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    bio = TextAreaField('we need your comment.',validators = [Required()])
     submit = SubmitField('Submit') 
 
 class PitchForm(FlaskForm):
-    category_id = SelectField('Select Category', choices=[('1', 'Interview'), ('2', 'Pick Up Lines'), ('3', 'Promotion'),('4','Product')])
+    category_id = SelectField('Select Category', choices=[('1', 'sotry'), ('2', 'picking'), ('3', 'publicity'),('4','selling products')])
     content = TextAreaField('YOUR PITCH')
     submit = SubmitField('Create Pitch')
 
