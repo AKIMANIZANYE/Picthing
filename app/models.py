@@ -1,9 +1,14 @@
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
+from . import login_manager
+from datetime import datetime
 # import run
 # run.db
 # db=SQLAlchemy(app)
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
@@ -15,6 +20,14 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     password_secure = db.Column(db.String(255))
+     def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_comments(cls,id):
+        reviews = Comment.query.filter_by(pitch_id=id).all()
+        return comments
 
 
     @property
