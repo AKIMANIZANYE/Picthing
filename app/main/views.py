@@ -11,10 +11,8 @@ import markdown2
 
 @main.route('/')
 def index():
-    '''
-    View root page function that returns the index page and its data
-    '''
-    title = 'Home - Welcome to The best Pitching Website Online'
+    
+    title = 'Home - Welcome to The  Pitching '
 
     search_pitch = request.args.get('pitch_query')
     pitches= Pitch.get_all_pitches()  

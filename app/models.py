@@ -13,12 +13,16 @@ class User(UserMixin,db.Model):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True,index = True)
-    role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    vote = db.relationship('Vote',backref = 'user',lazy="dynamic")
+            
     password_hash = db.Column(db.String(255))
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     password_secure = db.Column(db.String(255))
-     def save_comment(self):
+    pitches = db.relationship('Pitch',backref = 'user',lazy="dynamic")
+    comments = db.relationship('Comment',backref = 'user',lazy="dynamic")
+    categories=db.relationship('PitchCategory',backref = 'user',lazy="dynamic")
+    def save_comment(self):
         db.session.add(self)
         db.session.commit()
 
@@ -44,8 +48,7 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'User {self.username}'
 
-
-     class Pitch(db.Model):
+class Pitch(db.Model):
     
     __tablename__ = 'pitch'
 
@@ -54,7 +57,7 @@ class User(UserMixin,db.Model):
     category_id = db.Column(db.Integer)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     comments = db.relationship('Comment',backref = 'pitch',lazy="dynamic")
-        
+            
 
     def save_pitch(self):
         '''
@@ -83,6 +86,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     comment= db.Column(db.String)
     pitch_id = db.Column(db.Integer,db.ForeignKey('pitch.id'))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     username =  db.Column(db.String)
     votes= db.Column(db.Integer)
     
@@ -109,10 +113,14 @@ class Vote(db.Model):
 
     id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.String(255))
-    users = db.relationship('User',backref = 'role',lazy="dynamic") 
+   
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    
 
     def __repr__(self):
         return f'User {self.name}'  
+        db.session.add(self)
+        db.session.commit()
 
 
 class PitchCategory(db.Model):
@@ -125,11 +133,12 @@ class PitchCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name_of_category = db.Column(db.String(255))
     category_description = db.Column(db.String(255))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
     @classmethod
     def get_categories(cls):
-        '''
-        This function fetches all the categories from the database
-        '''
+        
         categories = PitchCategory.query.all()
-        return categories       
+        return categories    
+if __name__ == '__main__':
+    app.manage()         
