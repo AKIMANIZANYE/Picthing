@@ -1,43 +1,42 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> pitching  </title>
-        {% endif %}
-        {% extends 'base.html'%}
-        {% import 'macros.html' as macro%}
+{% block styles%}
+{{ super() }}
+<link href="https://fonts.googleapis.com/css?family=Akronim|Bellefair|Joti+One" rel="stylesheet">
+{% endblock %}
 
-<!-- Styles block -->
-
-        {% block styles%}
-        {{ super() }}
-        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-        {% endblock %}
+{% block content %}
+    <div class="container" style="background-color:lightblue; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
+        <div class="row" style="text-align:center; font-size:30px;">
+            <span style="font-size:40px; font-family: 'serif', cursive; color: brown;">One minutes  Pitch</span>
+        </div>
         
-    </head>
-  
-    <body>
-   
-
-    <!-- Content block -->
-   
-    {% block content %}
-
-<div class="container">
-    <form>
-        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
-        <input type="submit"  value="Submit" class="btn btn-default">
-    </form>
-
-</div>
-
-   
-
-{% endblock%}
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+            <div class="panel style="style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
+                <p style="font-family: 'Bellefair', serif; font-size:24px; font-style: italic;"> Welcome to Pitching in one minutes !!! you can put your pitch here!!!! </p>
+                
+                <div style="text-align:center;">
+                     <a href="{{url_for('main.new_pitch')}}"> 
+                        <br>
+                      <button style=" font-size:18px;"> <span >Add a new Pitch</span></button> 
+                    </a>
+                    <div class="all-pitches">
+                            <span style="color:yellowgreen; margin-bottom: 30px; font-family: 'sans-serif';font-size : 29px; font-style:italic;">All pitches are displayed below</span> 
+                                <hr> 
+                                {{macro.displayPitches(pitches)}}
+                            
+                               
+                        </div>
+                
+                </div>
+            
+            </div>
+            
+        </div>
+    </hr>
        
-</body>
-</html>
+    </div>
+
+
+{% endblock %}

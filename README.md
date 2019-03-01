@@ -1,6 +1,6 @@
 ## project name
   One minute Pitch
- Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com>
+ Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com> and https://github.com/AKIMANIZANYE/Picthing.git
 Date:   Tue Feb 26 11:20:53 2019 +0200
 
 ## Descrption of the project
@@ -26,7 +26,7 @@ Flask
 Boostrap
 
 ## contact
-Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority 
+Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority:https://github.com/AKIMANIZANYE/Picthing.git
 # #License and Copyright
 
 .Permision of reading code         .You are not allowed to edit any file
