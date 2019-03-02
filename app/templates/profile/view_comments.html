@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-
+{% import 'macros.html' as macro%}
 {% block styles%}
 {{ super() }}
 
@@ -14,7 +14,7 @@
                 <h3 style="color:blue;">Comments:</h3>
         </a>
         
-        <h6> &nbsp; &nbsp; <span style="font-weight:bolder">Found :</span>  &nbsp; <span style="font-family:Bellefair; font-size:18px;">{{ comments | count }} Comments</span></h6>
+        <h6> &nbsp; &nbsp; <span style="font-weight:bolder">Found :</span>  &nbsp; <span style=" font-size:18px;">{{ comments | count }} Comments</span></h6>
         <hr>
         {% for item in comments %}
             <div class="panel">

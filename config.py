@@ -3,7 +3,7 @@ import os
 class Config:
 
     SECRET_KEY ='123456'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:12345@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://wecode:12345@localhost/blog'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     MAIL_SERVER = 'smtp.googlemail.com'

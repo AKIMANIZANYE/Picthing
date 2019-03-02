@@ -21,11 +21,11 @@
     {% if user.profile_pic_path %}
     <img src="{{url_for('static',filename=user.profile_pic_path)}}"    alt="" class="img-thumbnail">
     {%else%}
-    <p>No profile picture</p>
+    <p style="color: aqua;font-size: 19px; ">No profile picture</p>
     {% endif %}
     {% if user == current_user %}
    <form action="{{url_for('main.update_profile',uname=user.username)}}"method="post" enctype = "multipart/form-data" >Edit profile</a>
-      <input type="file"  name="photo" class="form-control" required>
+      <input type="file"  name="photo" >
       <input type="submit">
     </form>
     {% endif %}

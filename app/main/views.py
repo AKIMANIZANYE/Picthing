@@ -114,6 +114,7 @@ def category(id):
     function that returns pitches based on the entered category id
     '''
     category = PitchCategory.query.get(id)
+    Comments.query.filter_by(pitch_id=id)
 
     if category is None:
         abort(404)
@@ -130,8 +131,11 @@ def new_comment(id):
         new_comment = Comment(pitch_id =id,comment=form.comment.data,username=current_user.username,votes=form.vote.data)
         new_comment.save_comment()
         return redirect(url_for('main.index'))
+    comments = Comment.get_comments(id)
+    print(comments)
+    
     #title = f'{pitch_result.id} review'
-    return render_template('new_comment.html',comment_form=form, vote_form= vote_form)
+    return render_template('new_comment.html',comment_form=form, vote_form= vote_form, comments=comments, pitch= pitch)
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
@@ -178,6 +182,7 @@ def view_comments(id):
     Function that returs  the comments belonging to a particular pitch
     '''
     comments = Comment.get_comments(id)
+    print(comments)
     return render_template('view_comments.html',comments = comments, id=id)
 
 
