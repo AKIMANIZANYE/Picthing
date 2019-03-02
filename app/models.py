@@ -59,7 +59,7 @@ class Blog(db.Model):
     comments = db.relationship('Comment',backref = 'blog',lazy="dynamic")
             
 
-    def save_pitch(self):
+    def save_blog(self):
         '''
         Function that saves pitches
         '''
@@ -67,12 +67,12 @@ class Blog(db.Model):
         db.session.commit()
     
     @classmethod
-    def get_all_pitches(cls):
+    def get_all_blogs(cls):
        
         return Pitch.query.all()
 
     @classmethod
-    def get_pitches_by_category(cls,cat_id):
+    def get_blogs_by_category(cls,cat_id):
         
         return Pitch.query.filter_by(category_id= cat_id)
 
@@ -123,11 +123,11 @@ class Subscribe(db.Model):
         db.session.commit()
 
 
-class PitchCategory(db.Model):
+class BlogCategory(db.Model):
     '''
     Function that defines different categories of pitches
     '''
-    __tablename__ ='pitch_categories'
+    __tablename__ ='blog_categories'
 
 
     id = db.Column(db.Integer, primary_key=True)
@@ -138,7 +138,7 @@ class PitchCategory(db.Model):
     @classmethod
     def get_categories(cls):
         
-        categories = PitchCategory.query.all()
+        categories = BlogCategory.query.all()
         return categories    
 if __name__ == '__main__':
     app.manage()         
