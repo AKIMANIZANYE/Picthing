@@ -19,16 +19,16 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
-    pitches = db.relationship('Pitch',backref = 'user',lazy="dynamic")
+    pitches = db.relationship('blog',backref = 'user',lazy="dynamic")
     comments = db.relationship('Comment',backref = 'user',lazy="dynamic")
-    categories=db.relationship('PitchCategory',backref = 'user',lazy="dynamic")
+    categories=db.relationship('BlogCategory',backref = 'user',lazy="dynamic")
     def save_comment(self):
         db.session.add(self)
         db.session.commit()
 
     @classmethod
     def get_comments(cls,id):
-        reviews = Comment.query.filter_by(pitch_id=id).all()
+        reviews = Comment.query.filter_by(blog_id=id).all()
         return comments
 
 
@@ -48,15 +48,15 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'User {self.username}'
 
-class Pitch(db.Model):
+class Blog(db.Model):
     
-    __tablename__ = 'pitch'
+    __tablename__ = 'blog'
 
     id = db.Column(db.Integer,primary_key = True)
     pitch = db.Column(db.String)
     category_id = db.Column(db.Integer)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-    comments = db.relationship('Comment',backref = 'pitch',lazy="dynamic")
+    comments = db.relationship('Comment',backref = 'blog',lazy="dynamic")
             
 
     def save_pitch(self):
@@ -108,7 +108,7 @@ class Comment(db.Model):
 
         return comments
 
-class Vote(db.Model):
+class Subscribe(db.Model):
     __tablename__ = 'vote'
 
     id = db.Column(db.Integer,primary_key = True)
