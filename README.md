@@ -1,5 +1,5 @@
 ## project name
-  One minute Pitch
+ Blog
  Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com> and https://github.com/AKIMANIZANYE/Picthing.git
 Date:   Tue Feb 26 11:20:53 2019 +0200
 
