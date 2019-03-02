@@ -1,14 +1,14 @@
 ## project name
  Blog
  Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com> and https://github.com/AKIMANIZANYE/Picthing.git
-Date:   Tue Feb 26 11:20:53 2019 +0200
+Date:  Saturday March 2  11:20:53 2019 +0200
 
 ## Descrption of the project
 News highlight is project that will contain the  the differences news and the users will be able to views differences types of the news that will be accouring in my  website it will date  that news has published and also it will also has the name 
 of that news.
 ## installation steps
 $ git clone 
-$ cd Pitching
+$ cd blog
 $ source virtual/bin/activate
 Inside the manage.py module change the config_name 
 $ ./start.sh
