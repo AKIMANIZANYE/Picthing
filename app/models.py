@@ -109,7 +109,7 @@ class Comment(db.Model):
         return comments
 
 class Subscribe(db.Model):
-    __tablename__ = 'vote'
+    __tablename__ = 'subscribe'
 
     id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.String(255))
