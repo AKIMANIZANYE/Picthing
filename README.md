@@ -33,4 +33,4 @@ Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudin
 .permission of testing website      .You are  not allowed to move  anyfile or folder
 .Permision of Riview 
 .persimision of commenting           . You are not allow to migrate
-.Permission of giving pitch         .You are not allowed to host it again  this website.
+.Permission of post your blog       .You are not allowed to host it again  this website.
