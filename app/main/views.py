@@ -14,10 +14,10 @@ def index():
     
     title = 'Home - Welcome to The  Pitching '
 
-    search_pitch = request.args.get('pitch_query')
-    pitches= Pitch.get_all_pitches()  
+    search_blog = request.args.get('blog_query')
+    blogs= Blogs.get_all_blogs()  
 
-    return render_template('index.html', title = title, pitches= pitches)
+    return render_template('index.html', title = title, blogs= blogs)
 
 #this section consist of the category root functions
 
@@ -135,7 +135,7 @@ def new_comment(id):
     print(comments)
     
     #title = f'{pitch_result.id} review'
-    return render_template('new_comment.html',comment_form=form, vote_form= vote_form, comments=comments, pitch= pitch)
+    return render_template('new_comment.html',comment_form=form, Subscribe_form= subscribe_form, comments=comments, Blog= blog)
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
@@ -192,5 +192,5 @@ def test(id):
     '''
     this is route for basic testing
     '''
-    pitch =Pitch.query.filter_by(id=1).first()
-    return render_template('test.html',pitch= pitch)
+   blog =blog.query.filter_by(id=1).first()
+    return render_template('test.html',Blog= Blog)P
