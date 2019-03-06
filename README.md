@@ -4,8 +4,8 @@
 Date:  Saturday March 2  11:20:53 2019 +0200 ;link for 
 
 ## Descrption of the project
-one minutes pitching  is project that will contain the  the differences news and the users will be able to views differences types of the news that will be accouring in my  website it will date  that news has published and also it will also has the name 
-of that news.
+one minutes pitching  is project that will contain the  the differences pitch  and the users will be able to views differences types of thepitch  make comments  that will be accouring in my  website it will date  that  different category has published and also it will also has the name you can also sign in and sin up
+of that pitch.
 ## installation steps
 $ git clone 
 $ cd blog
@@ -13,9 +13,9 @@ $ source virtual/bin/activate
 Inside the manage.py module change the config_name 
 $ ./start.sh
 ## Instrcuction
-On the homepage user will see form that will have option of reseaching the name of the news and some description of the news and also some there will be a buttom  to cleck for the more detals about the new after clicking there  users will the differences news according to the type of news.user can be able to views and make some views on the news.
+On the homepage user will see form that will have option of reseaching the name of the pitch and some description of thepitchand also some there will be a buttom  to cleck for the more detals about the new after clicking there  users will the differences pitch according to the type of pitch .user can be able to views and make some views on theptches.
 ## Test Driven Development -TDD
-inter the name of emails and password   submit Read the name of the  News views the  news  you  can see the Image there articles the  date has been wrotten that news.
+inter the name of emails and password   submit Read the name of the pitch views the  news  you  can see the 
 
 ## Technologu Used
 
