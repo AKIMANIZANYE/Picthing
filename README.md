@@ -1,10 +1,10 @@
 ## project name
  Blog
  Author: Claudine Akimanizanye <akimanizanye.claudine@gmail.com> and https://github.com/AKIMANIZANYE/Picthing.git
-Date:  Saturday March 2  11:20:53 2019 +0200 ;link for Heruku:https://git.heroku.com/pitclaudine.git
+Date:  Saturday March 2  11:20:53 2019 +0200 ;link for 
 
 ## Descrption of the project
-News highlight is project that will contain the  the differences news and the users will be able to views differences types of the news that will be accouring in my  website it will date  that news has published and also it will also has the name 
+one minutes pitching  is project that will contain the  the differences news and the users will be able to views differences types of the news that will be accouring in my  website it will date  that news has published and also it will also has the name 
 of that news.
 ## installation steps
 $ git clone 
@@ -15,7 +15,7 @@ $ ./start.sh
 ## Instrcuction
 On the homepage user will see form that will have option of reseaching the name of the news and some description of the news and also some there will be a buttom  to cleck for the more detals about the new after clicking there  users will the differences news according to the type of news.user can be able to views and make some views on the news.
 ## Test Driven Development -TDD
-inter the name of news   submit Read the name of the  News views the  news  you  can see the Image there articles the  date has been wrotten that news.
+inter the name of emails and password   submit Read the name of the  News views the  news  you  can see the Image there articles the  date has been wrotten that news.
 
 ## Technologu Used
 
@@ -26,7 +26,7 @@ Flask
 Boostrap
 
 ## contact
-Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority:https://github.com/AKIMANIZANYE/blog.git
+Emails:akimanizanyeclaudine@gmail.com Phone:098766544 Emails:akimanizanyeclaudine@akilahinstitute.org Repositority:https://github.com/AKIMANIZANYE/pitching.git
 # #License and Copyright
 
 .Permision of reading code         .You are not allowed to edit any file
